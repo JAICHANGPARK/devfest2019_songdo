@@ -25,7 +25,9 @@ dependencies:
   cupertino_icons: ^0.1.2
 
   firebase: ^5.0.3
-  provider: ^3.0.0+1
+  provider: ^3.1.0
+  day_night_switch: ^0.0.2+1
+  shared_preferences: ^0.5.4+5
 
 dev_dependencies:
   flutter_test:

@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:web_vote_app/db.dart';
 import 'package:web_vote_app/pages/home_page.dart';
+import 'package:web_vote_app/state_management/theme_changer.dart';
+import 'package:web_vote_app/styles/app_themes.dart';
 
 void main() {
   final firebase = FirebaseInstance();
+
   runApp(
     MultiProvider(
       providers: [
@@ -35,13 +38,26 @@ void main() {
         ChangeNotifierProvider.value(
           value: firebase.yellowNotifier,
         ),
+        ChangeNotifierProvider<ThemeNotifier>(
+          builder: (_) => ThemeNotifier(lightTheme),
+        ),
       ],
-      child: MaterialApp(
-        title: 'Devfest2019 Songdo',
-        home: HomePage(),
-      ),
+      child:AppMain()
     ),
   );
 }
+
+class AppMain extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+    return  MaterialApp(
+      theme: themeNotifier.getTheme(),
+      title: 'Devfest2019 Songdo',
+      home: HomePage(),
+    );
+  }
+}
+
 
 

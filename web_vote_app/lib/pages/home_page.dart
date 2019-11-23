@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:web_vote_app/pages/votes/first_page.dart';
 import 'package:web_vote_app/pages/votes/second_page.dart';
 
 
@@ -104,7 +105,7 @@ class _HomePageState extends State<HomePage> {
                     onTap: (){
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context){
-                            return VotingApp();
+                            return VoteTestPage();
                           }
                       ));
                     },
