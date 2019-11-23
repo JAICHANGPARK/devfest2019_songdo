@@ -38,3 +38,5 @@ lib/generated_plugin_registrant.dart
 .firebase/hosting.YnVpbGRcd2Vi.cache
 firebase.json
 lib/db.dart
+web_vote_app/lib/db.dart
+web_vote_app/lib/db.dart
