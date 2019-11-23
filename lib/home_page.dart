@@ -1,0 +1,127 @@
+import 'package:flutter/material.dart';
+import 'package:web_app/main.dart';
+
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Column(
+      children: <Widget>[
+        Expanded(
+          flex: 4,
+          child: Stack(
+            children: <Widget>[
+              Positioned(
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0,
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.green,
+                      image: DecorationImage(
+                          image: NetworkImage(
+                              "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F76023313%2F322147222069%2F1%2Foriginal.20191008-182146?w=1000&auto=compress&rect=0%2C76%2C1200%2C600&s=4cfb842cd100689e251fb007a8ccab81"),
+                          fit: BoxFit.cover,
+                          colorFilter: ColorFilter.mode(
+                              Colors.black.withOpacity(0.6),
+                              BlendMode.darken))),
+                ),
+              )
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 8,
+        ),
+        Expanded(
+            flex: 4,
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 4,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: NetworkImage(
+                              "https://avatars2.githubusercontent.com/u/19484515?s=460&v=4",
+                            ),
+                            fit: BoxFit.cover)),
+                  ),
+                ),
+                Expanded(
+                  flex: 5,
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      left: 30,
+                      top: 24,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "플러터로 IoT개발, 어렵지 않아",
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          "부재: 야 너두 Native처럼 할 수 있어",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        SizedBox(height: 24,),
+                        Text("박제창(JAICHANG.PARK)", style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+
+                        ),),
+                        Text("Dreamwalker",  style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),),
+                        Text("Angel Robotics"),
+
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            )),
+        Expanded(
+            flex: 2,
+            child: Padding(
+              padding: const EdgeInsets.only(
+                top: 8,
+              ),
+              child: InkWell(
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context){
+                      return VotingApp();
+                    }
+                  ));
+                },
+                child: Container(
+                  decoration: BoxDecoration(color: Colors.green[300]),
+                  child: Center(
+                    child: Text(
+                      "입장하기",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24),
+                    ),
+                  ),
+                ),
+              ),
+            ))
+      ],
+    ));
+  }
+}

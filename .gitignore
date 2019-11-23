@@ -37,3 +37,4 @@ lib/generated_plugin_registrant.dart
 .firebaserc
 .firebase/hosting.YnVpbGRcd2Vi.cache
 firebase.json
+lib/db.dart
