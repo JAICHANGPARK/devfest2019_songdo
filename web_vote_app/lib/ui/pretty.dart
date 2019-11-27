@@ -31,12 +31,13 @@ class PrettyVotingPage extends StatelessWidget {
             styling: labelTextStyle,
           ),
         ),
+        SizedBox(height: 24,),
         Expanded(
           child: GridView.count(
             shrinkWrap: true,
             crossAxisCount: 2,
-            crossAxisSpacing: 5,
-            mainAxisSpacing: 5,
+            crossAxisSpacing: 16,
+            mainAxisSpacing: 16,
             children: [
               BlueVotingButton(),
               GreenVotingButton(),
@@ -62,7 +63,7 @@ class VotingLabel extends StatelessWidget {
 class BlueVotingButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Consumer<BlueVoteNotifier>(builder: (context, notifier, _) {
+    return Consumer<Q2OneNotifier>(builder: (context, notifier, _) {
       return VotingButton(
         votes: notifier,
         title: "디자이너",
@@ -74,7 +75,7 @@ class BlueVotingButton extends StatelessWidget {
 class GreenVotingButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Consumer<GreenVoteNotifier>(builder: (context, notifier, _) {
+    return Consumer<Q2TwoNotifier>(builder: (context, notifier, _) {
       return VotingButton(
         votes: notifier,
         title: "개발자/엔지니어",
@@ -86,7 +87,7 @@ class GreenVotingButton extends StatelessWidget {
 class RedVotingButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Consumer<RedVoteNotifier>(builder: (context, notifier, _) {
+    return Consumer<Q2ThreeNotifier>(builder: (context, notifier, _) {
       return VotingButton(
         votes: notifier,
         title: "학생/대학(원)생",
@@ -98,7 +99,7 @@ class RedVotingButton extends StatelessWidget {
 class YellowVotingButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Consumer<YellowVoteNotifier>(builder: (context, notifier, _) {
+    return Consumer<Q2FourNotifier>(builder: (context, notifier, _) {
       return VotingButton(
         votes: notifier,
         title: "아무생각없음",

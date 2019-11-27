@@ -39,39 +39,39 @@ class _VoteTestPageState extends State<VoteTestPage> {
           }));
         },
       ),
-      body: InactiveOverlay(
-        child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              Container(
-                height: MediaQuery.of(context).size.height / 4,
-                margin: EdgeInsets.all(24),
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                    border: Border(),
-                    borderRadius: BorderRadius.circular(24),
-                    color: Colors.white,
-                    boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 4, spreadRadius: 2)]),
-                child: Center(
-                  child: Text(
-                    "세션 관심도 확인",
-                    style: TextStyle(color: Colors.black, fontSize: 34),
-                  ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              height: MediaQuery.of(context).size.height / 6,
+              margin: EdgeInsets.symmetric(horizontal: 36, vertical: 24),
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                  border: Border(),
+                  borderRadius: BorderRadius.circular(24),
+                  color: Colors.white,
+                  boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 4, spreadRadius: 2)]),
+              child: Center(
+                child: Text(
+                  "👀 세션 관심도 확인 👀",
+                  style: TextStyle(color: Colors.black, fontSize: 34),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(10),
-                child: CountdownClock(
-                  styling: labelTextStyle,
-                ),
-              ),
-              FavoriteVotingButton()
-            ],
-          ),
+            ),
+//            Padding(
+//              padding: const EdgeInsets.all(10),
+//              child: CountdownClock(
+//                styling: labelTextStyle,
+//              ),
+//            ),
+            SizedBox(
+              height: 16,
+            ),
+            FavoriteVotingButton()
+          ],
         ),
       ),
-
-
     );
   }
 }
