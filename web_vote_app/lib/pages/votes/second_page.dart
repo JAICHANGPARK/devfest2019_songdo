@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:web_vote_app/pages/home_page.dart';
 import 'package:web_vote_app/ui/app_bar.dart';
+import 'package:web_vote_app/ui/common_bnb.dart';
 import 'package:web_vote_app/ui/common_drawer.dart';
 import 'package:web_vote_app/ui/inactive_view.dart';
 import 'package:web_vote_app/ui/pretty.dart';
@@ -14,10 +15,10 @@ class VotingApp extends StatelessWidget {
     return Scaffold(
         appBar: WebAppBar(),
         drawer: CommonDrawer(),
+        bottomNavigationBar: AppBottomNavigationBar(1),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>
-            HomePage()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
           },
           child: Icon(Icons.home),
         ),
