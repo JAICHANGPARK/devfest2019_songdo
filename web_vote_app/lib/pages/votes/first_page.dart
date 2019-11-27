@@ -32,11 +32,27 @@ class _VoteTestPageState extends State<VoteTestPage> {
                   border: Border(),
                   borderRadius: BorderRadius.circular(24),
                   color: Colors.white,
-                  boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 2, spreadRadius: 3)]),
+                  boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 4, spreadRadius: 2)]),
               child: Center(
                 child: Text(
                   "세션 관심도 확인",
                   style: TextStyle(color: Colors.black, fontSize: 34),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 24,
+            ),
+            Container(
+              height: MediaQuery.of(context).size.height / 3,
+              width: MediaQuery.of(context).size.width / 2,
+              decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(width: 4), color: Colors.white, boxShadow: [
+                BoxShadow(color: Colors.black.withOpacity(0.15), blurRadius: 5, spreadRadius: 2),
+              ]),
+              child: Center(
+                child: Text(
+                  "❤️",
+                  style: TextStyle(fontSize: 48),
                 ),
               ),
             )
