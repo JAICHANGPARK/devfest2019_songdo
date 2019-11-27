@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:web_vote_app/pages/home_page.dart';
 import 'package:web_vote_app/styles/app_string.dart';
 import 'package:web_vote_app/ui/app_bar.dart';
@@ -16,10 +17,11 @@ class ThirdPage extends StatefulWidget {
 class _ThirdPageState extends State<ThirdPage> {
   @override
   Widget build(BuildContext context) {
+    final isPretty = Provider.of<ValueNotifier<bool>>(context);
     return Scaffold(
         appBar: WebAppBar(),
         drawer: CommonDrawer(),
-        bottomNavigationBar: AppBottomNavigationBar(0),
+        bottomNavigationBar: AppBottomNavigationBar(2),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
@@ -40,7 +42,7 @@ class _ThirdPageState extends State<ThirdPage> {
                       maxHeight: 800,
                     ),
                     child: InactiveOverlay(
-                      child: PrettyVotingPage(),
+                      child: isPretty.value ? PrettyVotingPage() : SimpleVotingPage(),
                     ),
                   ),
                 ),
@@ -50,8 +52,7 @@ class _ThirdPageState extends State<ThirdPage> {
               ),
               Container(
                   child: Center(
-                child: Image.network(
-                    devfestImage),
+                child: Image.network(devfestImage),
               )),
             ],
           ),

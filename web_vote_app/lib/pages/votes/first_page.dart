@@ -10,7 +10,9 @@ import 'package:web_vote_app/pages/votes/second_page.dart';
 import 'package:web_vote_app/state_management/theme_changer.dart';
 import 'package:web_vote_app/styles/app_string.dart';
 import 'package:web_vote_app/styles/app_themes.dart';
+import 'package:web_vote_app/styles/text_styles.dart';
 import 'package:web_vote_app/ui/app_bar.dart';
+import 'package:web_vote_app/ui/common.dart';
 import 'package:web_vote_app/ui/common_bnb.dart';
 import 'package:web_vote_app/ui/common_drawer.dart';
 import 'package:web_vote_app/ui/favorite_voting_button.dart';
@@ -55,6 +57,12 @@ class _VoteTestPageState extends State<VoteTestPage> {
                     "세션 관심도 확인",
                     style: TextStyle(color: Colors.black, fontSize: 34),
                   ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: CountdownClock(
+                  styling: labelTextStyle,
                 ),
               ),
               FavoriteVotingButton()

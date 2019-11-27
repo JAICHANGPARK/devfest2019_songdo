@@ -13,14 +13,8 @@ class SimpleVotingPage extends StatelessWidget {
         SizedBox(
           height: 16,
         ),
-        Padding(
-          padding: const EdgeInsets.all(10),
-          child: CountdownClock(
-            styling: labelTextStyle,
-          ),
-        ),
         Container(
-            height: 120,
+            height: MediaQuery.of(context).size.height / 6,
             margin: EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -29,11 +23,18 @@ class SimpleVotingPage extends StatelessWidget {
             child: Center(
                 child: const Text(
               'Q. Flutter 경험?',
-              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 48),
+              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 32),
             ))),
+        Padding(
+          padding: const EdgeInsets.all(10),
+          child: CountdownClock(
+            styling: labelTextStyle,
+          ),
+        ),
         const SizedBox(height: 10),
         Expanded(
           child: GridView.count(
+            shrinkWrap: true,
             crossAxisCount: 2,
             crossAxisSpacing: 16,
             mainAxisSpacing: 16,

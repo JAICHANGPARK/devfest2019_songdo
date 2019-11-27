@@ -4,6 +4,7 @@ import 'package:web_vote_app/db.dart';
 
 class InactiveOverlay extends StatelessWidget {
   InactiveOverlay({this.child});
+
   final Widget child;
 
   @override

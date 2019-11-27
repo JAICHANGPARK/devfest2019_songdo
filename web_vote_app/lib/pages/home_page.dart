@@ -3,6 +3,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:web_vote_app/pages/votes/first_page.dart';
 import 'package:web_vote_app/pages/votes/second_page.dart';
 import 'package:web_vote_app/styles/app_string.dart';
+import 'dart:html' as html;
 
 class HomePage extends StatefulWidget {
   @override
@@ -30,7 +31,7 @@ class _HomePageState extends State<HomePage> {
                     bottom: 0,
                     child: InkWell(
                       onTap: () {
-                        _launchURL();
+                        html.window.open(devfest2019SongdoLink, "");
                       },
                       child: Container(
                         decoration: BoxDecoration(
@@ -140,7 +141,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   _launchURL() async {
-    const url = 'https://www.notion.so/DEVFEST-19-Songdo-ad604638a9454daf82952f71c8458338';
+    const url = '';
     if (await canLaunch(url)) {
       await launch(url);
     } else {

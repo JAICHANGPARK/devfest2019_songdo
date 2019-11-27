@@ -5,16 +5,35 @@ import 'package:web_vote_app/common/vote_notifier.dart';
 import 'package:web_vote_app/db.dart';
 import 'package:web_vote_app/styles/text_styles.dart';
 import 'package:web_vote_app/ui/common.dart';
+import 'package:web_vote_app/ui/voting_button.dart';
 
 class PrettyVotingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const VotingLabel('Haberdashery Voter!'),
+        Container(
+            height: MediaQuery.of(context).size.height / 6,
+            margin: EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(24),
+            ),
+            child: Center(
+                child: const Text(
+              'Q. 🙋‍♀️ 🙋‍♂️저는 ⭕️⭕️ 입니다',
+              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 32),
+            ))),
         const SizedBox(height: 10),
+        Padding(
+          padding: const EdgeInsets.all(10),
+          child: CountdownClock(
+            styling: labelTextStyle,
+          ),
+        ),
         Expanded(
           child: GridView.count(
+            shrinkWrap: true,
             crossAxisCount: 2,
             crossAxisSpacing: 5,
             mainAxisSpacing: 5,
@@ -26,12 +45,6 @@ class PrettyVotingPage extends StatelessWidget {
             ],
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.all(10),
-          child: CountdownClock(
-            styling: labelTextStyle,
-          ),
-        ),
       ],
     );
   }
@@ -39,6 +52,7 @@ class PrettyVotingPage extends StatelessWidget {
 
 class VotingLabel extends StatelessWidget {
   const VotingLabel(this.label);
+
   final String label;
 
   @override
@@ -49,7 +63,10 @@ class BlueVotingButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<BlueVoteNotifier>(builder: (context, notifier, _) {
-      return VotingButton(notifier);
+      return VotingButton(
+        votes: notifier,
+        title: "디자이너",
+      );
     });
   }
 }
@@ -58,7 +75,10 @@ class GreenVotingButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<GreenVoteNotifier>(builder: (context, notifier, _) {
-      return VotingButton(notifier);
+      return VotingButton(
+        votes: notifier,
+        title: "개발자/엔지니어",
+      );
     });
   }
 }
@@ -67,7 +87,10 @@ class RedVotingButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<RedVoteNotifier>(builder: (context, notifier, _) {
-      return VotingButton(notifier);
+      return VotingButton(
+        votes: notifier,
+        title: "학생/대학(원)생",
+      );
     });
   }
 }
@@ -76,62 +99,31 @@ class YellowVotingButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<YellowVoteNotifier>(builder: (context, notifier, _) {
-      return VotingButton(notifier);
+      return VotingButton(
+        votes: notifier,
+        title: "아무생각없음",
+      );
     });
-  }
-}
-
-/// Styling for color voting buttons
-class VotingButton extends StatelessWidget {
-  VotingButton(this.votes);
-  final VoteNotifier votes;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10),
-      child: GestureDetector(
-        onTap: () => votes.vote(),
-        child: Material(
-          color: votes.color,
-          elevation: 4,
-          shape: CircleBorder(
-              side: BorderSide(
-            width: 10,
-            color: Colors.black38,
-          )),
-          //shape: RoundedRectangleBorder(
-          //  side: BorderSide(color: Colors.white, width: 10),
-          //  borderRadius: BorderRadius.circular(20),
-          //),
-          child: Center(
-            child: ScalingText('${votes.value}'),
-          ),
-        ),
-      ),
-    );
   }
 }
 
 class ScalingText extends StatefulWidget {
   ScalingText(this.text);
+
   final String text;
 
   @override
   _ScalingTextState createState() => _ScalingTextState();
 }
 
-class _ScalingTextState extends State<ScalingText>
-    with SingleTickerProviderStateMixin {
+class _ScalingTextState extends State<ScalingText> with SingleTickerProviderStateMixin {
   Animation<double> animation;
   AnimationController controller;
 
   initState() {
     super.initState();
-    controller =
-        AnimationController(duration: Duration(milliseconds: 500), vsync: this);
-    final CurvedAnimation curve =
-        CurvedAnimation(parent: controller, curve: Curves.easeIn);
+    controller = AnimationController(duration: Duration(milliseconds: 500), vsync: this);
+    final CurvedAnimation curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
     animation = Tween(begin: 0.0, end: 1.0).animate(curve);
     controller.forward();
   }

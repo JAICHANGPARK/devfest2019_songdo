@@ -7,7 +7,6 @@ import 'package:web_vote_app/styles/text_styles.dart';
 class VotingButton extends StatelessWidget {
   final VoteNotifier votes;
   final String title;
-
   VotingButton({this.votes, this.title});
 
   @override
@@ -23,7 +22,8 @@ class VotingButton extends StatelessWidget {
         children: <Widget>[
           Text(
             title,
-            style: TextStyle(fontSize: 24, color: Colors.black),
+            style: TextStyle(fontSize: 18, color: Colors.black,
+            fontWeight: FontWeight.bold),
           ),
           Text('${votes.value}', style: buttonTextStyle),
         ],
