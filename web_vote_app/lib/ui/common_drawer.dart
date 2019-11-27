@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:web_vote_app/pages/votes/first_page.dart';
 import 'package:web_vote_app/pages/votes/second_page.dart';
 import 'package:web_vote_app/state_management/theme_changer.dart';
+import 'package:web_vote_app/styles/app_string.dart';
 import 'package:web_vote_app/styles/app_themes.dart';
 
 class CommonDrawer extends StatefulWidget {
@@ -26,14 +27,18 @@ class _CommonDrawerState extends State<CommonDrawer> {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: NetworkImage(
-                        "https://pds.joins.com/news/component/htmlphoto_mmdata/201910/26/ce877ed2-0800-457f-b9a6-a86044718d40.jpg",
+                        pangsuImage,
                       ),
                       fit: BoxFit.cover)),
             ),
           ),
-          Text("여기는 팽수 있음", style: TextStyle(
-            fontSize: 24
-          ),),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "여기는 팽수 있음",
+              style: TextStyle(fontSize: 24),
+            ),
+          ),
           SizedBox(
             height: 24,
           ),
@@ -51,26 +56,22 @@ class _CommonDrawerState extends State<CommonDrawer> {
           ExpansionTile(
             children: <Widget>[
               ListTile(
-                title: Text("질문 1"),
-                onTap: (){
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context)=>VoteTestPage()
-                  ));
+                title: Text(question1),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => VoteTestPage()));
                 },
               ),
               ListTile(
-                title: Text("질문 2"),
-                onTap: (){
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context)=>VotingApp()
-                  ));
+                title: Text(question2),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => VotingApp()));
                 },
               ),
               ListTile(
-                title: Text("질문 3"),
+                title: Text(question3),
               ),
               ListTile(
-                title: Text("질문 4"),
+                title: Text(question4),
               ),
             ],
             title: Text('Audience 참여 목록'),
@@ -79,15 +80,15 @@ class _CommonDrawerState extends State<CommonDrawer> {
             leading: Icon(Icons.help_outline),
             children: <Widget>[
               ListTile(
-                title: Text("개발자"),
-                subtitle: Text("Dreamwalker"),
+                title: Text(developerTitle),
+                subtitle: Text(developerName),
               ),
               ListTile(
-                title: Text("Github"),
-                subtitle: Text("https://github.com/JAICHANGPARK"),
+                title: Text(githubTitle),
+                subtitle: Text(myGithubLink),
               ),
-
-            ], title: Text("정보"),
+            ],
+            title: Text("정보"),
           )
         ],
       ),
@@ -95,9 +96,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
   }
 
   void onThemeChanged(bool value, ThemeNotifier themeNotifier) async {
-    (value)
-        ? themeNotifier.setTheme(darkTheme)
-        : themeNotifier.setTheme(lightTheme);
+    (value) ? themeNotifier.setTheme(darkTheme) : themeNotifier.setTheme(lightTheme);
     var prefs = await SharedPreferences.getInstance();
     prefs.setBool('darkMode', value);
   }

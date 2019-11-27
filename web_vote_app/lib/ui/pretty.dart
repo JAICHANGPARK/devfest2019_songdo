@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
+import 'package:web_vote_app/common/vote_notifier.dart';
 import 'package:web_vote_app/db.dart';
 import 'package:web_vote_app/styles/text_styles.dart';
 import 'package:web_vote_app/ui/common.dart';

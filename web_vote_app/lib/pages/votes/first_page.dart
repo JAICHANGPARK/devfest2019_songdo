@@ -5,11 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:web_vote_app/db.dart';
+import 'package:web_vote_app/pages/home_page.dart';
 import 'package:web_vote_app/pages/votes/second_page.dart';
 import 'package:web_vote_app/state_management/theme_changer.dart';
+import 'package:web_vote_app/styles/app_string.dart';
 import 'package:web_vote_app/styles/app_themes.dart';
 import 'package:web_vote_app/ui/app_bar.dart';
 import 'package:web_vote_app/ui/common_drawer.dart';
+import 'package:web_vote_app/ui/favorite_voting_button.dart';
 import 'package:web_vote_app/ui/voting_button.dart';
 
 class VoteTestPage extends StatefulWidget {
@@ -27,7 +30,7 @@ class _VoteTestPageState extends State<VoteTestPage> {
         child: Column(
           children: <Widget>[
             Container(
-              height: 180,
+              height: MediaQuery.of(context).size.height / 4,
               margin: EdgeInsets.all(24),
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
@@ -42,21 +45,43 @@ class _VoteTestPageState extends State<VoteTestPage> {
                 ),
               ),
             ),
-            SizedBox(
-              height: 24,
-            ),
             FavoriteVotingButton()
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.arrow_forward),
+        child: Icon(Icons.home),
         onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-            return VotingApp();
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+            return HomePage();
           }));
         },
       ),
+      bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          onTap: (newValue) {
+            switch (newValue) {
+              case 0:
+                break;
+              case 1:
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => VotingApp()));
+                break;
+              default:
+                break;
+            }
+          },
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.info_outline),
+              title: Text(question1),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.info_outline),
+              title: Text(question2),
+            ),
+            BottomNavigationBarItem(icon: Icon(Icons.info_outline), title: Text(question3)),
+            BottomNavigationBarItem(icon: Icon(Icons.info_outline), title: Text(question4)),
+          ]),
     );
   }
 }
