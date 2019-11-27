@@ -38,6 +38,9 @@ void main() {
         ChangeNotifierProvider.value(
           value: firebase.yellowNotifier,
         ),
+        ChangeNotifierProvider.value(
+          value: firebase.favoriteNotifier,
+        ),
         ChangeNotifierProvider<ThemeNotifier>(
           builder: (_) => ThemeNotifier(lightTheme),
         ),

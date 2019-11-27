@@ -2,21 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 import 'package:web_vote_app/db.dart';
+import 'package:web_vote_app/styles/text_styles.dart';
 import 'package:web_vote_app/ui/common.dart';
-
-
-const buttonTextStyle = TextStyle(
-  fontFamily: 'RobotoMono-Regular',
-  color: Colors.white,
-  fontSize: 24,
-);
-
-const labelTextStyle = TextStyle(
-  fontFamily: 'RobotoMono-Regular',
-  fontWeight: FontWeight.w900,
-  color: Colors.black,
-  fontSize: 32,
-);
 
 class PrettyVotingPage extends StatelessWidget {
   @override

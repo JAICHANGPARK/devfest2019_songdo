@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:web_vote_app/pages/votes/first_page.dart';
+import 'package:web_vote_app/pages/votes/second_page.dart';
 import 'package:web_vote_app/state_management/theme_changer.dart';
 import 'package:web_vote_app/styles/app_themes.dart';
 
@@ -50,9 +52,19 @@ class _CommonDrawerState extends State<CommonDrawer> {
             children: <Widget>[
               ListTile(
                 title: Text("질문 1"),
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context)=>VoteTestPage()
+                  ));
+                },
               ),
               ListTile(
                 title: Text("질문 2"),
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context)=>VotingApp()
+                  ));
+                },
               ),
               ListTile(
                 title: Text("질문 3"),
