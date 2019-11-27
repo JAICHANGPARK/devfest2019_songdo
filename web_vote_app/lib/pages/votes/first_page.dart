@@ -16,23 +16,40 @@ class VoteTestPage extends StatefulWidget {
 }
 
 class _VoteTestPageState extends State<VoteTestPage> {
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: WebAppBar(),
       drawer: CommonDrawer(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Container(
+              height: 180,
+              margin: EdgeInsets.all(24),
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                  border: Border(),
+                  borderRadius: BorderRadius.circular(24),
+                  color: Colors.white,
+                  boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 2, spreadRadius: 3)]),
+              child: Center(
+                child: Text(
+                  "세션 관심도 확인",
+                  style: TextStyle(color: Colors.black, fontSize: 34),
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.arrow_forward),
         onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(
-            builder: (context){
-              return VotingApp();
-            }
-          ));
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+            return VotingApp();
+          }));
         },
-
       ),
     );
   }

@@ -29,6 +29,9 @@ class _CommonDrawerState extends State<CommonDrawer> {
                       fit: BoxFit.cover)),
             ),
           ),
+          Text("여기는 팽수 있음", style: TextStyle(
+            fontSize: 24
+          ),),
           SizedBox(
             height: 24,
           ),
