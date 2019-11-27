@@ -13,6 +13,12 @@ class SimpleVotingPage extends StatelessWidget {
         SizedBox(
           height: 16,
         ),
+        Padding(
+          padding: const EdgeInsets.all(10),
+          child: CountdownClock(
+            styling: labelTextStyle,
+          ),
+        ),
         Container(
             height: 120,
             margin: EdgeInsets.all(8),
@@ -39,17 +45,10 @@ class SimpleVotingPage extends StatelessWidget {
             ],
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.all(10),
-          child: CountdownClock(
-            styling: labelTextStyle,
-          ),
-        ),
       ],
     );
   }
 }
-
 
 class BlueVotingButton extends StatelessWidget {
   @override
@@ -57,7 +56,7 @@ class BlueVotingButton extends StatelessWidget {
     return Consumer<BlueVoteNotifier>(builder: (context, notifier, _) {
       return VotingButton(
         votes: notifier,
-        title: "경험해봤어요",
+        title: "🙈경험해봤어요!",
       );
     });
   }
@@ -69,7 +68,7 @@ class GreenVotingButton extends StatelessWidget {
     return Consumer<GreenVoteNotifier>(builder: (context, notifier, _) {
       return VotingButton(
         votes: notifier,
-        title: "실무에 적용중:)",
+        title: "🔨실무에 적용 중!",
       );
     });
   }
@@ -81,7 +80,7 @@ class RedVotingButton extends StatelessWidget {
     return Consumer<RedVoteNotifier>(builder: (context, notifier, _) {
       return VotingButton(
         votes: notifier,
-        title: "비전공자에요",
+        title: "🐣비전공자에요",
       );
     });
   }
@@ -93,7 +92,7 @@ class YellowVotingButton extends StatelessWidget {
     return Consumer<YellowVoteNotifier>(builder: (context, notifier, _) {
       return VotingButton(
         votes: notifier,
-        title: "아무것도 몰라요",
+        title: "🐳처음이에요",
       );
     });
   }

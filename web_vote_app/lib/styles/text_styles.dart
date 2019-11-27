@@ -9,6 +9,5 @@ const buttonTextStyle = TextStyle(
 const labelTextStyle = TextStyle(
   fontFamily: 'Raleway',
   fontWeight: FontWeight.w900,
-  color: Colors.white,
   fontSize: 32,
 );

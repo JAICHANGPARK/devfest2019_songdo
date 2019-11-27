@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:web_vote_app/pages/votes/first_page.dart';
 import 'package:web_vote_app/pages/votes/second_page.dart';
 import 'package:web_vote_app/styles/app_string.dart';
@@ -27,13 +28,18 @@ class _HomePageState extends State<HomePage> {
                     right: 0,
                     top: 0,
                     bottom: 0,
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.green,
-                          image: DecorationImage(
-                              image: NetworkImage(devfestImage),
-                              fit: BoxFit.cover,
-                              colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.6), BlendMode.darken))),
+                    child: InkWell(
+                      onTap: () {
+                        _launchURL();
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.green,
+                            image: DecorationImage(
+                                image: NetworkImage(devfestImage),
+                                fit: BoxFit.cover,
+                                colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.6), BlendMode.darken))),
+                      ),
                     ),
                   )
                 ],
@@ -131,5 +137,14 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     ));
+  }
+
+  _launchURL() async {
+    const url = 'https://www.notion.so/DEVFEST-19-Songdo-ad604638a9454daf82952f71c8458338';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }

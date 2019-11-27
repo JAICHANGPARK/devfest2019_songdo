@@ -28,6 +28,15 @@ class _VoteTestPageState extends State<VoteTestPage> {
     return Scaffold(
       appBar: WebAppBar(),
       drawer: CommonDrawer(),
+      bottomNavigationBar: AppBottomNavigationBar(0),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.home),
+        onPressed: () {
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+            return HomePage();
+          }));
+        },
+      ),
       body: InactiveOverlay(
         child: SingleChildScrollView(
           child: Column(
@@ -53,15 +62,8 @@ class _VoteTestPageState extends State<VoteTestPage> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.home),
-        onPressed: () {
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-            return HomePage();
-          }));
-        },
-      ),
-      bottomNavigationBar: AppBottomNavigationBar(0),
+
+
     );
   }
 }
