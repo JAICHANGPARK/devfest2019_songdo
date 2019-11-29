@@ -9,7 +9,6 @@ import 'package:web_vote_app/pages/votes/third_page.dart';
 import 'package:web_vote_app/state_management/theme_changer.dart';
 import 'package:web_vote_app/styles/app_string.dart';
 import 'package:web_vote_app/styles/app_themes.dart';
-
 import 'dart:html' as html;
 
 class CommonDrawer extends StatefulWidget {

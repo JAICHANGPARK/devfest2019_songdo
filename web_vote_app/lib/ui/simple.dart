@@ -79,7 +79,7 @@ class RedVotingButton extends StatelessWidget {
     return Consumer<RedVoteNotifier>(builder: (context, notifier, _) {
       return VotingButton(
         votes: notifier,
-        title: "🐣비전공자에요",
+        title: "🐣들어만봤어요",
       );
     });
   }
@@ -91,7 +91,7 @@ class YellowVotingButton extends StatelessWidget {
     return Consumer<YellowVoteNotifier>(builder: (context, notifier, _) {
       return VotingButton(
         votes: notifier,
-        title: "🐳처음이에요",
+        title: "🐳처음이에요/비전공자",
       );
     });
   }
