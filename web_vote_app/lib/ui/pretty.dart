@@ -21,7 +21,7 @@ class PrettyVotingPage extends StatelessWidget {
             ),
             child: Center(
                 child: const Text(
-              'Q. 🙋‍♀️ 🙋‍♂️저는 ⭕️⭕️ 입니다',
+              '🙋‍♀️ 🙋‍♂️저는 ⭕️⭕️ 입니다',
               style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 24),
             ))),
 

@@ -22,7 +22,7 @@ class SimpleVotingPage extends StatelessWidget {
             ),
             child: Center(
                 child: const Text(
-              'Q. Flutter 경험?',
+              'Flutter 경험?',
               style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 24),
             ))),
         Padding(

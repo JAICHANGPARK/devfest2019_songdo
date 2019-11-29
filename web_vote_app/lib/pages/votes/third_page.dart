@@ -5,6 +5,7 @@ import 'package:web_vote_app/styles/app_string.dart';
 import 'package:web_vote_app/ui/app_bar.dart';
 import 'package:web_vote_app/ui/common_bnb.dart';
 import 'package:web_vote_app/ui/common_drawer.dart';
+import 'package:web_vote_app/ui/common_fb.dart';
 import 'package:web_vote_app/ui/inactive_view.dart';
 import 'package:web_vote_app/ui/pretty.dart';
 import 'package:web_vote_app/ui/simple.dart';
@@ -22,20 +23,13 @@ class _ThirdPageState extends State<ThirdPage> {
         appBar: WebAppBar(),
         drawer: CommonDrawer(),
         bottomNavigationBar: AppBottomNavigationBar(2),
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.home),
-          onPressed: () {
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-              return HomePage();
-            }));
-          },
-        ),
+        floatingActionButton: AppFloatingActionButton(),
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
               Center(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   child: Container(
                     constraints: BoxConstraints(
                       maxWidth: 600,

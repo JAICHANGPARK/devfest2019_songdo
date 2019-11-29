@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:web_vote_app/common/vote_notifier.dart';
-import 'package:web_vote_app/db.dart';
 import 'package:web_vote_app/styles/text_styles.dart';
+
 /// Styling for color voting buttons
-class FavVotingButton extends StatelessWidget {
+class LikeVotingButton extends StatelessWidget {
   final VoteNotifier votes;
   final String title;
 
-  FavVotingButton({this.votes, this.title});
+  LikeVotingButton({this.votes, this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class FavVotingButton extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text(
-              "❤️",
+              "👍",
               style: TextStyle(fontSize: 48),
             ),
             Text('${votes.value}', style: buttonTextStyle),

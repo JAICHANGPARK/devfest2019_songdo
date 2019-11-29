@@ -52,7 +52,9 @@ void main() {
       ChangeNotifierProvider.value(
         value: firebase.q2fourNotifier,
       ),
-
+      ChangeNotifierProvider.value(
+        value: firebase.q3likeNotifier,
+      ),
       ChangeNotifierProvider<ThemeNotifier>(
         builder: (_) => ThemeNotifier(lightTheme),
       ),

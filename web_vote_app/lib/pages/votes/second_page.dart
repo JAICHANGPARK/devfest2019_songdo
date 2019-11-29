@@ -4,29 +4,24 @@ import 'package:web_vote_app/styles/app_string.dart';
 import 'package:web_vote_app/ui/app_bar.dart';
 import 'package:web_vote_app/ui/common_bnb.dart';
 import 'package:web_vote_app/ui/common_drawer.dart';
+import 'package:web_vote_app/ui/common_fb.dart';
 import 'package:web_vote_app/ui/inactive_view.dart';
 import 'package:web_vote_app/ui/pretty.dart';
 
 class VotingApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
         appBar: WebAppBar(),
         drawer: CommonDrawer(),
         bottomNavigationBar: AppBottomNavigationBar(1),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
-          },
-          child: Icon(Icons.home),
-        ),
+        floatingActionButton: AppFloatingActionButton(),
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
               Center(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   child: Container(
                     constraints: BoxConstraints(
                       maxWidth: 600,
@@ -43,11 +38,10 @@ class VotingApp extends StatelessWidget {
               ),
               Container(
                   child: Center(
-                    child: Image.network(devfestImage),
-                  )),
+                child: Image.network(devfestImage),
+              )),
             ],
           ),
         ));
-
   }
 }

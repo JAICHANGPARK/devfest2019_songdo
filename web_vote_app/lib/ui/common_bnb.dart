@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:web_vote_app/pages/votes/first_page.dart';
+import 'package:web_vote_app/pages/votes/last_page.dart';
 import 'package:web_vote_app/pages/votes/second_page.dart';
 import 'package:web_vote_app/pages/votes/third_page.dart';
 import 'package:web_vote_app/styles/app_string.dart';
@@ -24,6 +25,9 @@ class AppBottomNavigationBar extends StatelessWidget {
               break;
             case 2:
               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ThirdPage()));
+              break;
+            case 3:
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LastPage()));
               break;
             default:
               break;

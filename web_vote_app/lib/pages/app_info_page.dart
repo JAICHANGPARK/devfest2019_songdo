@@ -46,16 +46,16 @@ class _AppInfoPageState extends State<AppInfoPage> {
             ],
           ),
           ExpansionTile(
-            title: Text("페키지"),
+            title: Text("패키지"),
             children: <Widget>[
               ListTile(
-                title: Text("firebase"),
+                title: Text("Firebase"),
                 onTap: () {
                   html.window.open("https://pub.dev/packages/firebase", "");
                 },
               ),
               ListTile(
-                title: Text("provider"),
+                title: Text("Provider"),
                 onTap: () {
                   html.window.open("https://pub.dev/packages/provider", "");
                 },
