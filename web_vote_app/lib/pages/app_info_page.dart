@@ -33,14 +33,21 @@ class _AppInfoPageState extends State<AppInfoPage> {
                 title: Text(githubTitle),
                 subtitle: Text(myGithubLink),
                 onTap: () {
-                  html.window.open(myGithubLink, "");
+                  html.window.open("Github 이동", "");
                 },
               ),
               ListTile(
                 title: Text(youtubeTitle),
-                subtitle: Text(youtubeLink),
+                subtitle: Text("Youtube 이동"),
                 onTap: () {
                   html.window.open(youtubeLink, "");
+                },
+              ),
+              ListTile(
+                title: Text("PlayStore"),
+                subtitle: Text("플레이스토어 이동"),
+                onTap: () {
+                  html.window.open("https://play.google.com/store/apps/developer?id=JAICHANGPARK", "");
                 },
               ),
             ],

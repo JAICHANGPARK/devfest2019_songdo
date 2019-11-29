@@ -3,7 +3,9 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:web_vote_app/pages/app_info_page.dart';
 import 'package:web_vote_app/pages/votes/first_page.dart';
+import 'package:web_vote_app/pages/votes/last_page.dart';
 import 'package:web_vote_app/pages/votes/second_page.dart';
+import 'package:web_vote_app/pages/votes/third_page.dart';
 import 'package:web_vote_app/state_management/theme_changer.dart';
 import 'package:web_vote_app/styles/app_string.dart';
 import 'package:web_vote_app/styles/app_themes.dart';
@@ -58,7 +60,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
           ),
           ListTile(
             leading: Icon(Icons.insert_drive_file),
-            onTap: (){
+            onTap: () {
               html.window.open(balpyho, "");
             },
             title: Text("발표자료 보기"),
@@ -80,9 +82,15 @@ class _CommonDrawerState extends State<CommonDrawer> {
               ),
               ListTile(
                 title: Text(question3),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => ThirdPage()));
+                },
               ),
               ListTile(
                 title: Text(question4),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => LastPage()));
+                },
               ),
             ],
             title: Text('Audience 참여 목록'),
@@ -90,10 +98,8 @@ class _CommonDrawerState extends State<CommonDrawer> {
           ListTile(
             leading: Icon(Icons.help_outline),
             title: Text("정보"),
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(
-                builder: (context)=> AppInfoPage()
-              ));
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => AppInfoPage()));
             },
           )
         ],
