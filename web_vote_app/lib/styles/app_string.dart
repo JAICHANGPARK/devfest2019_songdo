@@ -6,7 +6,13 @@ const String developerTitle = "개발자";
 const String developerName = "Dreamwalker";
 const String githubTitle = "Github";
 const String myGithubLink = "https://github.com/JAICHANGPARK";
+const String codeTitle = "소스코드";
+const String codeLink = "https://github.com/JAICHANGPARK/devfest2019_songdo";
+const String youtubeTitle= "Youtube";
+const String youtubeLink = "https://www.youtube.com/channel/UCQFdaZ1D9SOVRtUwi2ZKfMg";
 const String question1 = "질문 1";
 const String question2 = "질문 2";
 const String question3 = "질문 3";
 const String question4 = "질문 4";
+
+const String balpyho = "https://docs.google.com/presentation/d/1x4sylbEqTT1Ca5Q-7gapyUfgVwhXRfTmreZ91XmYle0/edit?usp=sharing";

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:web_vote_app/pages/votes/first_page.dart';
-import 'package:web_vote_app/pages/votes/second_page.dart';
 import 'package:web_vote_app/styles/app_string.dart';
 import 'dart:html' as html;
 

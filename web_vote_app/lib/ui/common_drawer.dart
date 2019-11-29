@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:web_vote_app/pages/app_info_page.dart';
 import 'package:web_vote_app/pages/votes/first_page.dart';
 import 'package:web_vote_app/pages/votes/second_page.dart';
 import 'package:web_vote_app/state_management/theme_changer.dart';
 import 'package:web_vote_app/styles/app_string.dart';
 import 'package:web_vote_app/styles/app_themes.dart';
+
+import 'dart:html' as html;
 
 class CommonDrawer extends StatefulWidget {
   @override
@@ -53,7 +56,15 @@ class _CommonDrawerState extends State<CommonDrawer> {
             },
             value: _darkTheme,
           ),
+          ListTile(
+            leading: Icon(Icons.insert_drive_file),
+            onTap: (){
+              html.window.open(balpyho, "");
+            },
+            title: Text("발표자료 보기"),
+          ),
           ExpansionTile(
+            leading: Icon(Icons.apps),
             children: <Widget>[
               ListTile(
                 title: Text(question1),
@@ -76,19 +87,14 @@ class _CommonDrawerState extends State<CommonDrawer> {
             ],
             title: Text('Audience 참여 목록'),
           ),
-          ExpansionTile(
+          ListTile(
             leading: Icon(Icons.help_outline),
-            children: <Widget>[
-              ListTile(
-                title: Text(developerTitle),
-                subtitle: Text(developerName),
-              ),
-              ListTile(
-                title: Text(githubTitle),
-                subtitle: Text(myGithubLink),
-              ),
-            ],
             title: Text("정보"),
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context)=> AppInfoPage()
+              ));
+            },
           )
         ],
       ),

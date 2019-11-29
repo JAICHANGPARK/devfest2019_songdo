@@ -35,7 +35,7 @@ class _ThirdPageState extends State<ThirdPage> {
             children: <Widget>[
               Center(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
                   child: Container(
                     constraints: BoxConstraints(
                       maxWidth: 600,
@@ -48,7 +48,7 @@ class _ThirdPageState extends State<ThirdPage> {
                 ),
               ),
               SizedBox(
-                height: 32,
+                height: 16,
               ),
               Container(
                   child: Center(

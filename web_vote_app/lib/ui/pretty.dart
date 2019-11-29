@@ -13,7 +13,7 @@ class PrettyVotingPage extends StatelessWidget {
     return Column(
       children: [
         Container(
-            height: MediaQuery.of(context).size.height / 6,
+            height: MediaQuery.of(context).size.height / 7,
             margin: EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -22,19 +22,18 @@ class PrettyVotingPage extends StatelessWidget {
             child: Center(
                 child: const Text(
               'Q. 🙋‍♀️ 🙋‍♂️저는 ⭕️⭕️ 입니다',
-              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 32),
+              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 24),
             ))),
-        const SizedBox(height: 10),
+
         Padding(
           padding: const EdgeInsets.all(10),
           child: CountdownClock(
             styling: labelTextStyle,
           ),
         ),
-        SizedBox(height: 24,),
+        SizedBox(height: 16,),
         Expanded(
           child: GridView.count(
-            shrinkWrap: true,
             crossAxisCount: 2,
             crossAxisSpacing: 16,
             mainAxisSpacing: 16,
@@ -66,7 +65,7 @@ class BlueVotingButton extends StatelessWidget {
     return Consumer<Q2OneNotifier>(builder: (context, notifier, _) {
       return VotingButton(
         votes: notifier,
-        title: "디자이너",
+        title: "👩‍🎨디자이너👨‍🎨",
       );
     });
   }
@@ -78,7 +77,7 @@ class GreenVotingButton extends StatelessWidget {
     return Consumer<Q2TwoNotifier>(builder: (context, notifier, _) {
       return VotingButton(
         votes: notifier,
-        title: "개발자/엔지니어",
+        title: "👨‍💻개발자/엔지니어👩‍💻",
       );
     });
   }
@@ -90,7 +89,7 @@ class RedVotingButton extends StatelessWidget {
     return Consumer<Q2ThreeNotifier>(builder: (context, notifier, _) {
       return VotingButton(
         votes: notifier,
-        title: "학생/대학(원)생",
+        title: "👩‍🎓학생/대학(원)생👨‍🎓",
       );
     });
   }
@@ -102,7 +101,7 @@ class YellowVotingButton extends StatelessWidget {
     return Consumer<Q2FourNotifier>(builder: (context, notifier, _) {
       return VotingButton(
         votes: notifier,
-        title: "아무생각없음",
+        title: "🧟‍♂️아무생각없음🧟‍♀️",
       );
     });
   }

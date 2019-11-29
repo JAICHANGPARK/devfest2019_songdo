@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:web_vote_app/pages/home_page.dart';
 import 'package:web_vote_app/styles/app_string.dart';
 import 'package:web_vote_app/ui/app_bar.dart';
@@ -7,7 +6,6 @@ import 'package:web_vote_app/ui/common_bnb.dart';
 import 'package:web_vote_app/ui/common_drawer.dart';
 import 'package:web_vote_app/ui/inactive_view.dart';
 import 'package:web_vote_app/ui/pretty.dart';
-import 'package:web_vote_app/ui/simple.dart';
 
 class VotingApp extends StatelessWidget {
   @override
@@ -28,7 +26,7 @@ class VotingApp extends StatelessWidget {
             children: <Widget>[
               Center(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
                   child: Container(
                     constraints: BoxConstraints(
                       maxWidth: 600,
