@@ -4,7 +4,7 @@
 
 # 안내
 
-1. Flutter 버전은 master로 변경해서 사용하세요
+1. Flutter 채널은 master로 변경해서 사용하세요(stable채널로는 안해봤음..ㅎㅎ)
 2. Firebase 웹 버전 파일이 필요합니다.
 
 # build
